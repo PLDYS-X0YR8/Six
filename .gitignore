@@ -26,3 +26,8 @@ x86/
 *.obj
 *.tlog
 *.log
+
+*.ini
+
+branch/
+first_party/

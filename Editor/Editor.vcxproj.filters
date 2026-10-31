@@ -15,8 +15,89 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="..\vendor\imgui\misc\cpp\imgui_stdlib.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\Log.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vendor\imgui\imgui.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vendor\imgui\imgui_draw.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vendor\imgui\imgui_tables.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vendor\imgui\imgui_widgets.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vendor\imgui\backends\imgui_impl_glfw.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vendor\imgui\backends\imgui_impl_opengl3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SEditorApp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Testing\YSpin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Inspector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hierarchy.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Layout.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProjectSetting.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Log.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SEditorApp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Testing\YSpin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PanelBase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Inspector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EditorContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hierarchy.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Layout.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProjectSetting.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)..\Engine\out\x64\$(Configuration)\Engine.dll" />
+    <None Include="$(MSBuildThisFileDirectory)..\Engine\out\x64\$(Configuration)\Engine.pdb" />
   </ItemGroup>
 </Project>

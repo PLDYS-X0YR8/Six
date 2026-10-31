@@ -3,10 +3,7 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Folder Name="/Assets/">
-    <File Path="DefaultShader.vert" />
-  </Folder>
-  <Project Path="Editor/Editor.vcxproj" Id="ccb87ba6-611f-489f-a2b5-16002ab09bf1" />
-  <Project Path="Engine/Engine.vcxproj" Id="91fe2d1e-a2ea-43fa-a7ed-feaf38c70996" />
-  <Project Path="Sandbox/Sandbox.vcxproj" Id="33ed55cf-5829-466b-8379-900623241d02" />
+  <Project Path="E:/Six/SixEngine/Editor/Editor.vcxproj" Id="ccb87ba6-611f-489f-a2b5-16002ab09bf1" />
+  <Project Path="E:/Six/SixEngine/Engine/Engine.vcxproj" Id="91fe2d1e-a2ea-43fa-a7ed-feaf38c70996" />
+  <Project Path="E:/Six/SixEngine/Sandbox/Sandbox.vcxproj" Id="33ed55cf-5829-466b-8379-900623241d02" />
 </Solution>

@@ -1,0 +1,6 @@
+{
+    "Assets Path": "./assets",
+    "Config Path": "./conf",
+    "Entry Point": "Scene",
+    "Project Name": "Editor"
+}

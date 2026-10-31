@@ -44,7 +44,7 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
-    <OutDir>$(ProjectDir)$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(ProjectDir)out\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -52,7 +52,7 @@
     <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
-    <OutDir>$(ProjectDir)$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(ProjectDir)out\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -72,27 +72,27 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <GenerateManifest>false</GenerateManifest>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <GenerateManifest>false</GenerateManifest>
-  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;IMGUI_IMPL_OPENGL_LOADER_GLAD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)..\Engine\src;$(MSBuildThisFileDirectory)..\vendor\glm;E:\Six\SixEngine\vendor\imgui\misc\cpp;E:\Six\SixEngine\vendor\imgui;E:\Six\SixEngine\vendor\imgui\backends;E:\Six\SixEngine\vendor\GLFW;E:\Six\SixEngine\vendor\json;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)..\Engine\out\x64\$(Configuration);E:\Six\SixEngine\vendor\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Manifest>
-      <EnableSegmentHeap>true</EnableSegmentHeap>
+      <EnableSegmentHeap>false</EnableSegmentHeap>
     </Manifest>
+    <PostBuildEvent>
+      <Command>xcopy /Y /E /I "$(MSBuildThisFileDirectory)..\Engine\assets" "$(OutDir)assets\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -100,37 +100,46 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;IMGUI_IMPL_OPENGL_LOADER_GLAD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)..\Engine\src;$(MSBuildThisFileDirectory)..\vendor\glm;E:\Six\SixEngine\vendor\imgui\misc\cpp;E:\Six\SixEngine\vendor\imgui;E:\Six\SixEngine\vendor\imgui\backends;E:\Six\SixEngine\vendor\GLFW;E:\Six\SixEngine\vendor\json;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)..\Engine\out\x64\$(Configuration);E:\Six\SixEngine\vendor\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Manifest>
-      <EnableSegmentHeap>true</EnableSegmentHeap>
+      <EnableSegmentHeap>false</EnableSegmentHeap>
     </Manifest>
+    <PostBuildEvent>
+      <Command>xcopy /Y /E /I "$(MSBuildThisFileDirectory)..\Engine\assets" "$(OutDir)assets\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);IMGUI_IMPL_OPENGL_LOADER_GLAD</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;IMGUI_IMPL_OPENGL_LOADER_GLAD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>E:\Six\SixEngine\vendor\imgui\misc\cpp;E:\Six\SixEngine\vendor\imgui;E:\Six\SixEngine\vendor\imgui\backends;E:\Six\SixEngine\vendor\GLFW;E:\Six\SixEngine\vendor\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)..\Engine\src;$(MSBuildThisFileDirectory)..\vendor\glm;E:\Six\SixEngine\vendor\imgui\misc\cpp;E:\Six\SixEngine\vendor\imgui;E:\Six\SixEngine\vendor\imgui\backends;E:\Six\SixEngine\vendor\GLFW;E:\Six\SixEngine\vendor\json;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>E:\Six\SixEngine\vendor\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)..\Engine\out\x64\$(Configuration);E:\Six\SixEngine\vendor\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Manifest>
-      <EnableSegmentHeap>true</EnableSegmentHeap>
+      <EnableSegmentHeap>false</EnableSegmentHeap>
     </Manifest>
+    <PostBuildEvent>
+      <Command>xcopy /Y /E /I "$(MSBuildThisFileDirectory)..\Engine\assets" "$(OutDir)assets\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -138,40 +147,68 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);IMGUI_IMPL_OPENGL_LOADER_GLAD</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;IMGUI_IMPL_OPENGL_LOADER_GLAD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>E:\Six\SixEngine\vendor\imgui\misc\cpp;E:\Six\SixEngine\vendor\imgui;E:\Six\SixEngine\vendor\imgui\backends;E:\Six\SixEngine\vendor\GLFW;E:\Six\SixEngine\vendor\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)..\Engine\src;$(MSBuildThisFileDirectory)..\vendor\glm;E:\Six\SixEngine\vendor\imgui\misc\cpp;E:\Six\SixEngine\vendor\imgui;E:\Six\SixEngine\vendor\imgui\backends;E:\Six\SixEngine\vendor\GLFW;E:\Six\SixEngine\vendor\json;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>E:\Six\SixEngine\vendor\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)..\Engine\out\x64\$(Configuration);E:\Six\SixEngine\vendor\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Manifest>
-      <EnableSegmentHeap>true</EnableSegmentHeap>
+      <EnableSegmentHeap>false</EnableSegmentHeap>
     </Manifest>
+    <PostBuildEvent>
+      <Command>xcopy /Y /E /I "$(MSBuildThisFileDirectory)..\Engine\assets" "$(OutDir)assets\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\vendor\glad\src\glad.c" />
-    <ClCompile Include="..\vendor\imgui\imgui_demo.cpp" />
-    <ClCompile Include="..\vendor\imgui\misc\cpp\imgui_stdlib.cpp" />
+    <!-- 保证 Engine 先编完再链接,否则并行构建会链到旧的 Engine.lib -->
+    <ProjectReference Include="..\Engine\Engine.vcxproj">
+      <Project>{91fe2d1e-a2ea-43fa-a7ed-feaf38c70996}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GameView.cpp" />
+    <ClCompile Include="src\Hierarchy.cpp" />
+    <ClCompile Include="src\Inspector.cpp" />
+    <ClCompile Include="src\Layout.cpp" />
     <ClCompile Include="src\Log.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <!-- ImGui core -->
+    <ClCompile Include="src\ProjectSetting.cpp" />
+    <ClCompile Include="src\SEditorApp.cpp" />
     <ClCompile Include="..\vendor\imgui\imgui.cpp" />
     <ClCompile Include="..\vendor\imgui\imgui_draw.cpp" />
     <ClCompile Include="..\vendor\imgui\imgui_tables.cpp" />
     <ClCompile Include="..\vendor\imgui\imgui_widgets.cpp" />
-    <!-- ImGui backends -->
     <ClCompile Include="..\vendor\imgui\backends\imgui_impl_glfw.cpp" />
     <ClCompile Include="..\vendor\imgui\backends\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="..\vendor\imgui\misc\cpp\imgui_stdlib.cpp" />
+    <ClCompile Include="src\Testing\YSpin.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\vendor\imgui\misc\cpp\imgui_stdlib.h" />
+    <ClInclude Include="src\EditorContext.h" />
+    <ClInclude Include="src\GameView.h" />
+    <ClInclude Include="src\Hierarchy.h" />
+    <ClInclude Include="src\Inspector.h" />
+    <ClInclude Include="src\Layout.h" />
     <ClInclude Include="src\Log.h" />
+    <ClInclude Include="src\PanelBase.h" />
+    <ClInclude Include="src\ProjectSetting.h" />
+    <ClInclude Include="src\SEditorApp.h" />
+    <ClInclude Include="src\Testing\YSpin.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)..\Engine\out\x64\$(Configuration)\Engine.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Engine\out\x64\$(Configuration)\Engine.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

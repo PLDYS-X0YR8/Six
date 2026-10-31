@@ -1,0 +1,6 @@
+{
+    "Project Name": "Sandbox",
+    "Entry Point": "Main Scene",
+    "Config Path": "./conf",
+    "Assets Path": "./assets"
+}

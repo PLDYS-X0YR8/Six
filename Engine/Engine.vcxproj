@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -44,7 +44,7 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
-    <OutDir>$(ProjectDir)$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(ProjectDir)out\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
@@ -52,7 +52,7 @@
     <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
-    <OutDir>$(ProjectDir)$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(ProjectDir)out\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -75,17 +75,25 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <GenerateManifest>false</GenerateManifest>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(ProjectDir)out\$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(ProjectDir)out\$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);SIX_RENDER_GL</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);SIX_RENDER_GL;SIX_WINDOWS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>;E:\Six\SixEngine\vendor\json</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>src\Core\Render\glfw_exports.def</ModuleDefinitionFile>
     </Link>
     <Manifest>
       <EnableSegmentHeap>true</EnableSegmentHeap>
@@ -97,13 +105,15 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);SIX_RENDER_GL</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);SIX_RENDER_GL;SIX_WINDOWS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>;E:\Six\SixEngine\vendor\json</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>src\Core\Render\glfw_exports.def</ModuleDefinitionFile>
     </Link>
     <Manifest>
       <EnableSegmentHeap>true</EnableSegmentHeap>
@@ -113,23 +123,29 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);SIX_EXPORT;SIX_RENDER_GL;SIX_RENDER_GL</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);SIX_EXPORT;SIX_RENDER_GL;SIX_RENDER_GL;SIX_WINDOWS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>spch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir)src;E:\Six\SixEngine\vendor\bullet\src;E:\Six\SixEngine\vendor\assimp\include;E:\Six\SixEngine\vendor\stb_image;E:\Six\SixEngine\vendor\glad\include;E:\Six\SixEngine\vendor\GLFW;E:\Six\SixEngine\vendor\glm</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;E:\Six\SixEngine\vendor\bullet\src;E:\Six\SixEngine\vendor\assimp\include;E:\Six\SixEngine\vendor\stb_image;E:\Six\SixEngine\vendor\glad\include;E:\Six\SixEngine\vendor\GLFW;E:\Six\SixEngine\vendor\glm;E:\Six\SixEngine\vendor\json</AdditionalIncludeDirectories>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>src\Core\Render\glfw_exports.def</ModuleDefinitionFile>
       <AdditionalLibraryDirectories>E:\Six\SixEngine\vendor\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;BulletDynamicsd.lib;opengl32.lib;assimp-vc143-mtd.lib;ImGui.lib;%(AdditionalDependencies);ImGui.lib</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;BulletDynamicsd.lib;opengl32.lib;assimp-vc143-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OptimizeReferences>false</OptimizeReferences>
+      <EnableCOMDATFolding>false</EnableCOMDATFolding>
     </Link>
     <Manifest>
       <EnableSegmentHeap>true</EnableSegmentHeap>
     </Manifest>
+    <PostBuildEvent>
+      <Command>xcopy /Y /E /I "$(ProjectDir)assets" "$(OutDir)assets"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -137,51 +153,124 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);SIX_EXPORT;SIX_RENDER_GL;SIX_RENDER_GL</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);SIX_EXPORT;SIX_RENDER_GL;SIX_RENDER_GL;SIX_WINDOWS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>spch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir)src;E:\Six\SixEngine\vendor\bullet\src;E:\Six\SixEngine\vendor\assimp\include;E:\Six\SixEngine\vendor\stb_image;E:\Six\SixEngine\vendor\glad\include;E:\Six\SixEngine\vendor\GLFW;E:\Six\SixEngine\vendor\glm</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;E:\Six\SixEngine\vendor\bullet\src;E:\Six\SixEngine\vendor\assimp\include;E:\Six\SixEngine\vendor\stb_image;E:\Six\SixEngine\vendor\glad\include;E:\Six\SixEngine\vendor\GLFW;E:\Six\SixEngine\vendor\glm;E:\Six\SixEngine\vendor\json</AdditionalIncludeDirectories>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>src\Core\Render\glfw_exports.def</ModuleDefinitionFile>
       <AdditionalLibraryDirectories>E:\Six\SixEngine\vendor\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;BulletDynamicsd.lib;opengl32.lib;assimp-vc143-mtd.lib;%(AdditionalDependencies);ImGui.lib</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;BulletDynamicsd.lib;opengl32.lib;assimp-vc143-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Manifest>
       <EnableSegmentHeap>true</EnableSegmentHeap>
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\confdef.h" />
+    <ClInclude Include="src\Core\Assets\AssetsManager.h" />
+    <ClInclude Include="src\Core\KeyCodes.h" />
+    <ClInclude Include="src\Core\MouseButtons.h" />
+    <ClInclude Include="src\Core\PlatformDetection.h" />
+    <ClInclude Include="src\Core\Render\GL\GLContext.h" />
+    <ClInclude Include="src\Core\Render\GL\GLRenderAPI.h" />
+    <ClInclude Include="src\Core\Render\GL\graphicObj\GLTexture.h" />
+    <ClInclude Include="src\Core\Render\GL\graphicObj\GLViewport.h" />
+    <ClInclude Include="src\Core\Render\graphicObj\Material.h" />
+    <ClInclude Include="src\Core\Render\graphicObj\Texture.h" />
+    <ClInclude Include="src\Core\Render\graphicObj\Viewport.h" />
+    <ClInclude Include="src\Core\Render\Mesh.h" />
+    <ClInclude Include="src\Core\Render\RenderAPI.h" />
+    <ClInclude Include="src\Core\Render\GraphicsContext.h" />
+    <ClInclude Include="src\Core\Render\Shader.h" />
     <ClInclude Include="src\Core\Application.h" />
-    <ClInclude Include="src\Event\Event.h" />
-    <ClInclude Include="src\Event\EventQueue.h" />
-    <ClInclude Include="src\Files\FileSystem.h" />
-    <ClInclude Include="src\Render\Renderer.h" />
-    <ClInclude Include="src\Render\Window.h" />
+    <ClInclude Include="src\Core\AppContext.h" />
+    <ClInclude Include="src\Core\Event\Event.h" />
+    <ClInclude Include="src\Core\Event\EventQueue.h" />
+    <ClInclude Include="src\Core\Assets\FileSystem.h" />
+    <ClInclude Include="src\Core\Assets\Json.h" />
+    <ClInclude Include="src\Core\Project\Project.h" />
+    <ClInclude Include="src\Core\Project\ProjectConf.h" />
+    <ClInclude Include="src\Core\Project\ProjectSetting.h" />
+    <ClInclude Include="src\Core\Project\ProjectConfig.h" />
+    <ClInclude Include="src\Core\Render\Renderer.h" />
+    <ClInclude Include="src\Core\Render\Window.h" />
+    <ClInclude Include="src\Core\Scene\Component.h" />
+    <ClInclude Include="src\Core\Scene\Components\MeshRes.h" />
+    <ClInclude Include="src\Core\Scene\Components\RenderComponent.h" />
+    <ClInclude Include="src\Core\Scene\ECS\Camera.h" />
+    <ClInclude Include="src\Core\Scene\ECS\Environment.h" />
+    <ClInclude Include="src\Core\Scene\ECS\Light.h" />
+    <ClInclude Include="src\Core\Scene\ECS\ProcessClose.h" />
+    <ClInclude Include="src\Core\Scene\ECS\RenderRes.h" />
+    <ClInclude Include="src\Core\Scene\ECS\RenderSystem.h" />
+    <ClInclude Include="src\Core\Scene\Program.h" />
+    <ClInclude Include="src\Core\Scene\System.h" />
+    <ClInclude Include="src\Core\Scene\ECS\Transform.h" />
+    <ClInclude Include="src\Core\Scene\Entity.h" />
     <ClInclude Include="src\spch.h" />
     <ClInclude Include="src\sixcore.h" />
     <ClInclude Include="src\SixEngine.h" />
-    <ClInclude Include="src\Timer\Timer.h" />
+    <ClInclude Include="src\Core\Timer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Core\EntryPoint.h" />
+    <ClCompile Include="src\Core\Render\GL\GLContext.cpp" />
+    <ClCompile Include="src\Core\Render\GL\GLRenderAPI.cpp" />
+    <ClCompile Include="src\Core\Render\GL\graphicObj\GLTexture.cpp" />
+    <ClCompile Include="src\Core\Render\GL\graphicObj\GLViewport.cpp" />
+    <ClCompile Include="src\Core\Render\graphicObj\Material.cpp" />
+    <ClCompile Include="src\Core\Render\graphicObj\Texture.cpp" />
+    <ClCompile Include="src\Core\Render\graphicObj\Viewport.cpp" />
+    <ClCompile Include="src\Core\Render\GraphicsContext.cpp" />
+    <ClCompile Include="src\Core\Render\Mesh.cpp" />
+    <ClCompile Include="src\Core\Render\RenderAPI.cpp" />
+    <ClCompile Include="src\Core\Render\Shader.cpp" />
     <ClCompile Include="src\Core\Application.cpp" />
-    <ClCompile Include="src\Event\EventQueue.cpp" />
+    <ClCompile Include="src\Core\AppContext.cpp" />
+    <ClCompile Include="src\Core\Event\EventQueue.cpp" />
+    <ClCompile Include="src\Core\Assets\FileSystem.cpp" />
+    <ClCompile Include="src\Core\Assets\Json.cpp" />
+    <ClCompile Include="src\Core\Project\Project.cpp" />
+    <ClCompile Include="src\Core\Project\ProjectConf.cpp" />
+    <ClCompile Include="src\Core\Project\ProjectSetting.cpp" />
+    <ClCompile Include="src\Core\Project\ProjectConfig.cpp" />
+    <ClCompile Include="src\Core\Scene\ECS\Environment.cpp" />
+    <ClCompile Include="src\Core\Scene\ECS\ProcessClose.cpp" />
+    <ClCompile Include="src\Core\Scene\ECS\RenderSystem.cpp" />
+    <ClCompile Include="src\Core\Scene\Entity.cpp" />
+    <ClCompile Include="src\Core\Scene\Component.cpp" />
+    <ClCompile Include="src\Core\Scene\Program.cpp" />
+    <ClCompile Include="src\Core\Scene\System.cpp" />
     <ClCompile Include="src\glad.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="src\Render\Renderer.cpp" />
-    <ClCompile Include="src\Render\Window.cpp" />
+    <ClCompile Include="src\Core\Render\Renderer.cpp" />
+    <ClCompile Include="src\Core\Render\Window.cpp" />
     <ClCompile Include="src\spch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="src\Timer\Timer.cpp" />
+    <ClCompile Include="src\Core\Timer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\DefaultShader.vert" />
+    <None Include="assets\DefaultShader.frag" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\DefaultAO.png" />
+    <Image Include="assets\DefaultHeight.png" />
+    <Image Include="assets\DefaultMask.png" />
+    <Image Include="assets\DefaultMetallic.png" />
+    <Image Include="assets\DefaultNormal.png" />
+    <Image Include="assets\DefaultRoughness.png" />
+    <Image Include="assets\DefaultTexture.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

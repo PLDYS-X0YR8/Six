@@ -1,0 +1,10 @@
+{
+    "engine_version": "1.0.1",
+    "config-name": "window",
+    "items": {
+        "window-width":1280,
+        "window-height":720,
+        "window-vsync":true,
+        "window-title":"SixEngine Editor"
+    }
+}

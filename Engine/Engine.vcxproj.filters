@@ -18,48 +18,141 @@
     <ClInclude Include="src\sixcore.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\Timer\Timer.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="src\SixEngine.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Event\Event.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\spch.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\Event\EventQueue.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Render\Renderer.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="src\Core\Application.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\Render\Window.h">
+    <ClInclude Include="src\Core\AppContext.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\confdef.h">
+    <ClInclude Include="src\Core\Render\Shader.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\Files\FileSystem.h">
+    <ClInclude Include="src\Core\Event\Event.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Event\EventQueue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Assets\FileSystem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Assets\Json.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Project\Project.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Project\ProjectConf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Project\ProjectSetting.h">
+    <ClInclude Include="src\Core\Project\ProjectConfig.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Render\Renderer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Render\Window.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Timer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Render\Mesh.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Scene\Entity.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Scene\Component.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Scene\Components\RenderComponent.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Scene\Components\MeshRes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\EntryPoint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\PlatformDetection.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Render\RenderAPI.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Render\GL\GLRenderAPI.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Render\GL\GLContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Render\GraphicsContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\KeyCodes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\MouseButtons.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Render\graphicObj\Texture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Render\graphicObj\Viewport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Render\GL\graphicObj\GLTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Render\GL\graphicObj\GLViewport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Scene\System.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Scene\ECS\Transform.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Scene\ECS\RenderSystem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Scene\ECS\RenderRes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Render\graphicObj\Material.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Scene\ECS\Camera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Scene\Program.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Scene\ECS\ProcessClose.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Scene\ECS\Light.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Scene\ECS\Environment.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Assets\AssetsManager.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Timer\Timer.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="src\spch.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Event\EventQueue.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Render\Renderer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\glad.c">
@@ -68,8 +161,119 @@
     <ClCompile Include="src\Core\Application.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\Render\Window.cpp">
+    <ClCompile Include="src\Core\AppContext.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\Core\Render\Shader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Event\EventQueue.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Assets\FileSystem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Assets\Json.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Project\Project.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Project\ProjectConf.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Project\ProjectSetting.cpp">
+    <ClCompile Include="src\Core\Project\ProjectConfig.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Render\Renderer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Render\Window.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Timer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Render\Mesh.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Scene\Entity.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Render\GL\GLRenderAPI.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Render\RenderAPI.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Render\GraphicsContext.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Render\GL\GLContext.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Render\graphicObj\Texture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Render\graphicObj\Viewport.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Render\GL\graphicObj\GLTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Render\GL\graphicObj\GLViewport.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Scene\ECS\RenderSystem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Scene\Component.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Scene\Program.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Scene\System.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Render\graphicObj\Material.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Scene\ECS\ProcessClose.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Scene\ECS\Environment.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\DefaultShader.vert" />
+    <None Include="assets\DefaultShader.frag" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\DefaultTexture.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="assets\DefaultAO.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="assets\DefaultHeight.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="assets\DefaultMask.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="assets\DefaultMetallic.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="assets\DefaultNormal.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="assets\DefaultRoughness.png">
+      <Filter>资源文件</Filter>
+    </Image>
   </ItemGroup>
 </Project>
